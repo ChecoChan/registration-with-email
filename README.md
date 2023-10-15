@@ -17,10 +17,10 @@
   curl --location --request POST 'localhost:8080/api/v1/registration' \
   --header 'Content-Type: application/json' \
   --data-raw '{
-  "firstName": "Checo",
-  "lastName": "Chan",
-  "email": "checo.chan@gmail.com",
-  "password": "password"
+    "firstName": "Checo",
+    "lastName": "Chan",
+    "email": "checo.chan@gmail.com",
+    "password": "password"
   }'
   ```
 
