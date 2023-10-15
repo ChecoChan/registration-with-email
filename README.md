@@ -13,37 +13,34 @@
 
 ### 接口
 - 注册：
-  ```http request
-  POST http://localhost:8080/api/v1/registration
-  Content-Type: application/json
-
-  {
-    "firstName": "Checo",
-    "lastName": "Chan",
-    "email": "checo.chan@gmail.com",
-    "password": "password"
-  }
+  ```bash
+  curl --location --request POST 'localhost:8080/api/v1/registration' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+  "firstName": "Checo",
+  "lastName": "Chan",
+  "email": "checo.chan@gmail.com",
+  "password": "password"
+  }'
   ```
 
 - 验证账户：
-  ```http request
+  ```bash
   # token 为注册接口返回值
-  GET http://localhost:8080/api/v1/registration/confirm?token=ea0c2c58-908e-4058-8843-de2bd063b919
+  curl --request GET 'localhost:8080/api/v1/registration/confirm?token=e2ab277b-ebed-42fb-8e59-169f339d0617'
   ```
 
 - 登录：
 
-  ```http request
-  POST http://localhost:8080/login
-  Content-Type: application/x-www-form-urlencoded
-  
-  username = checo.chan@gmail.com &
-  password = password
+  ```bash
+  curl --request POST 'localhost:8080/login' \
+  --header 'Content-Type: application/x-www-form-urlencoded' \
+  --data 'username=checo.chan@gmail.com&password=password'
   ```
   
 - 登录成功：
-  ```http request
-  GET http://localhost:8080/login/success
+  ```bash
+  curl --request GET 'localhost:8080/login/success'
   ```
 
 ### 项目启动和使用
